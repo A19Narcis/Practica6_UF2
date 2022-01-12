@@ -15,24 +15,26 @@ import utils.Utils;
 public class Parte1 {
 
     public static void main(String[] args) {
-        String[] membres = {"''", "Narcis", "PersonaX"};
         int numero = Utils.LlegirInt("Número: ");
-        int integrante = QueEsIntegrantDAquestGrup(numero, membres);
-        System.out.println(membres[integrante]);
+        String integrante = quiEsIntegrantDAquestGrup(numero);
+        System.out.println(integrante);
     }
 
-    static int QueEsIntegrantDAquestGrup(int numero, String[] membres) {
-        int result;
-
-        final int ESPAI = 0;
+    static String quiEsIntegrantDAquestGrup (int num){
         
-        if (numero > membres.length || numero <= 0) {
-            result = ESPAI;
-        } else {
-            result = numero;
+        String nom;
+        
+        if (num==1){
+            nom="Joan";
         }
-
-        return result;
+        else if (num==2){
+            nom="Narcis";
+        }
+        else{
+            nom="";
+        }
+        
+        return nom;
     }
 
 }
