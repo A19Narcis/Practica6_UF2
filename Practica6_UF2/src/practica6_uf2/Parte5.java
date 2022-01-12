@@ -7,40 +7,25 @@ package practica6_uf2;
 
 /**
  *
- * @author Narcis
+ * @author Narcis & Joan
  */
 public class Parte5 {
 
     public static void main(String[] args) {
         int n1 = 656;
         int n2 = 848;
-        int maximCD = MCD_Eucalides(n1, n2);
+        int maximCD = MCD_Euclides(n1, n2);
         System.out.println("MCD --> " + maximCD);
     }
 
-    static int MCD_Eucalides(int n1, int n2) {
-        float result;
+    static int MCD_Euclides(int n1, int n2) {
+        int result;
 
-        if (n1 > n2) {
-            result = n1 / n2;
-            while (result % 1 != 0) {
-                result = n2 / result;
-                n2 = (int) result;
-            }
-
-        } else if (n1 < n2) {
-            do {
-                result = (float) n2 / n1;
-                if (n2 % n1 != 0) {
-                    result = n1 * (int) result;
-                    result = n2 - result;
-                }
-            } while (n1 % result != 0);
-
+        if (n2 == 0) {
+            result = n1;
         } else {
-            result = n1 / n2;
+            result = MCD_Euclides(n2, n1 % n2);
         }
-
-        return (int) result;
+        return result;
     }
 }

@@ -9,7 +9,7 @@ import utils.Utils;
 
 /**
  *
- * @author Narcis
+ * @author Narcis & Joan
  */
 public class Parte2 {
 

@@ -7,7 +7,7 @@ package practica6_uf2;
 
 /**
  *
- * @author Narcis
+ * @author Narcis & Joan
  */
 public class Parte3 {
 
