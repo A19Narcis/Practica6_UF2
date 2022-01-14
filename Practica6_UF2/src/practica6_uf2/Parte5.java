@@ -14,18 +14,26 @@ public class Parte5 {
     public static void main(String[] args) {
         int n1 = 656;
         int n2 = 848;
-        int maximCD = MCD_Euclides(n1, n2);
+        int maximCD = mcd_euclides(n1, n2);
         System.out.println("MCD --> " + maximCD);
     }
 
-    static int MCD_Euclides(int n1, int n2) {
-        int result;
-
-        if (n2 == 0) {
-            result = n1;
-        } else {
-            result = MCD_Euclides(n2, n1 % n2);
+    static int mcd_euclides (int a,int b){
+        
+        int residu=1;
+        int aux=0;
+        
+        while (residu>0) {
+            residu=a%b;
+            
+            a=b;
+            b=residu;
+            
+            if (residu!=0){
+                aux=residu;
+            } 
         }
-        return result;
+        
+        return aux;
     }
 }
